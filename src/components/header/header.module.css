@@ -1,0 +1,142 @@
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68px;
+    width: 100%;
+
+    position: sticky;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #282828;
+}
+
+.navigation {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    font-size: 16px;
+    font-weight: 500;
+    /* color: #282828; */
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+
+    color: #ee7f00;
+    /* background-color: salmon; */
+}
+
+.redes_sociais {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        padding: 1rem 4rem;
+    }
+}
+
+@media (max-width: 999px) {
+    .container {
+        padding: 1rem 2rem;
+    }
+
+    .navigation {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 780px) {
+    .container {
+        padding: 0rem 1rem;
+    }
+}
+
+@media (min-width: 780px) {
+
+    .menu_bar,
+    .container_mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 780px) {
+    .navigation {
+        display: none;
+    }
+
+    .redes_sociais {
+        display: none;
+    }
+}
+
+.menu_bar {
+    cursor: pointer;
+}
+
+.container_mobile {
+
+    padding: 2rem 1rem;
+
+    box-shadow: 0 0 4px 1px #00000023;
+    border-radius: 10px 0 0 0;
+    width: 0;
+    height: 90vh;
+    margin-left: 0;
+    overflow: hidden;
+    transition: width 0.5s ease, margin-left 0.5s ease;
+    position: relative;
+}
+
+.container_mobile.open {
+    width: 80%;
+    margin-left: 20%;
+}
+
+.container_mobile::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 40vh;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}
+
+.container_mobile.open::before {
+    transform: translateX(100%);
+}
+
+.link_container_mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link_container_mobile li {
+    margin-bottom: 0.7rem;
+}
+
+.link_mobile {
+    color: #ee7f00;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
